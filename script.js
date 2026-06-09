@@ -130,8 +130,7 @@ document.querySelectorAll(".card button").forEach(button => {
         );
 
         const item = document.createElement("div");
-
-item.innerHTML = `
+        item.innerHTML = `
 ${itemName} - ₹${itemPrice}
 <button class="remove-btn">❌</button>
 `;

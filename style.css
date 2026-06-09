@@ -386,6 +386,10 @@ footer p{
   gap:40px;
   font-size:18px; 
 }
+.cart-sidebar{
+  width:100%;
+  max-width: 100%;
+}
 
   #menuBtn{
     display:block;
@@ -418,8 +422,9 @@ footer p{
 .cart-sidebar{
   position:fixed;
   top:0;
-  right:-350px;
-  width:350px;
+  right:-100%;
+  width:100%;
+  max-width:350px;
   height:100%;
   background:white;
   box-shadow:-5px 0 15px rgba(0,0,0,0.2);
