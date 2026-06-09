@@ -65,7 +65,7 @@ section{
 }
 .icons{
   display:flex;
-  gap:20px;
+  gap:30px;
   font-size:22px;
   cursor:pointer;
 }
@@ -374,6 +374,18 @@ footer p{
 /* Responsive */
 
 @media(max-width:768px){
+  .navbar{
+  padding:15px 5%;
+}
+
+.logo{
+  font-size:20px;
+}
+
+.icons{
+  gap:30px;
+  font-size:18px; 
+}
 
   #menuBtn{
     display:block;
