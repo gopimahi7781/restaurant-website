@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Foodie Hub Restaurant</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
 
@@ -23,15 +23,21 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#menu">Menu</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
 
       <div class="icons">
-        <i class="fa-solid fa-moon" id="themeBtn"></i>
-        <i class="fa-solid fa-bars" id="menuBtn"></i>
+      <i class="fa-solid fa-moon" id="themeBtn"></i>
+
+      <div class="cart-container">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-count">0</span>
       </div>
+
+  <i class="fa-solid fa-bars" id="menuBtn"></i>
+</div>
     </nav>
   </header>
 
@@ -40,13 +46,18 @@
     <div class="hero-text">
       <h1>Delicious Food For Every Mood 🍔</h1>
       <p>Fresh, tasty and delivered fast to your doorstep.</p>
+      <a href="#menu">
       <button>Order Now</button>
+      </a>
     </div>
   </section>
 
   <!-- Menu Section -->
   <section class="menu" id="menu">
     <h2>Popular Menu</h2>
+    <div class="search-box">
+  <input type="text" placeholder="🔍 Search food items...">
+</div>
 
     <div class="menu-container">
 
@@ -71,17 +82,86 @@
         <button>Add to Cart</button>
       </div>
 
+      <div class="card">
+        <img src="images/Pasta.jpg" alt="">
+        <h3>Pasta</h3>
+        <p>₹199</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="images/Sandwich.jpg" alt="">
+        <h3>Sandwich</h3>
+        <p>₹149</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="images/Noodles.jpg" alt="">
+        <h3>Noodles</h3>
+        <p>₹179</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="images/IceCream.jpg" alt="">
+        <h3>Ice Cream</h3>
+        <p>₹99</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="images/Mocktail.jpg" alt="">
+        <h3>Mocktail</h3>
+        <p>₹129</p>
+        <button>Add to Cart</button>
+      </div>
+
     </div>
   </section>
+
+  <!-- Why Choose Us -->
+  <section class="about">
+  <h2>Why Choose Us</h2>
+
+  <div class="menu-container">
+
+    <div class="card">
+      <h3>🥗 Fresh Ingredients</h3>
+      <p>
+        We use only fresh and high-quality ingredients to prepare every dish.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>👨‍🍳 Expert Chefs</h3>
+      <p>
+        Our experienced chefs create delicious meals with passion and care.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🚚 Fast Delivery</h3>
+      <p>
+        Quick and reliable delivery service right to your doorstep.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>⭐ Best Quality</h3>
+      <p>
+        We are committed to providing the best food quality and customer satisfaction.
+      </p>
+    </div>
+
+  </div>
+</section>
 
   <!-- About -->
   <section class="about" id="about">
     <div class="about-text">
       <h2>About Us</h2>
-      <p>
-        Welcome to Foodie Hub Restaurant. We serve high-quality delicious food
-        with fresh ingredients and excellent customer service.
-      </p>
+      <p>Welcome to Foodie Hub Restaurant, where great taste meets exceptional service. Our mission is to provide delicious, freshly prepared meals made with premium ingredients. From traditional favorities to modern dishes, we ensure every meal delivers a memorable dining experience for our customers </p>
     </div>
   </section>
 
@@ -111,14 +191,30 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 Foodie Hub Restaurant</p>
+  <p>© 2026 Foodie Hub Restaurant</p>
 
-    <div class="socials">
-      <i class="fa-brands fa-instagram"></i>
-      <i class="fa-brands fa-facebook"></i>
-      <i class="fa-brands fa-x-twitter"></i>
-    </div>
-  </footer>
+  <p>Email: foodiehub@gmail.com</p>
+  <p>Phone: +91 8978959469</p>
+  <p>Location: Hyderabad, Telangana</p>
+
+  <div class="socials">
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-x-twitter"></i>
+  </div>
+</footer>
+<div class="cart-sidebar" id="cartSidebar">
+  <h2>Your Cart</h2>
+
+  <div id="cartItems">
+    <p id="emptyCart">Your Cart is Empty 🛒</p>
+  </div>
+
+  <h3>Total: ₹<span id="totalPrice">0</span></h3>
+
+  <button id="closeCart">Close</button>
+  <button id="checkoutBtn">Checkout</button>
+</div>
 
   <script src="script.js"></script>
 </body>
