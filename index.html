@@ -30,7 +30,7 @@
 
       <div class="icons">
       <i class="fa-solid fa-moon" id="themeBtn"></i>
-
+      <i class="fa-solid fa-heart" id="wishlistBtn"></i>
       <div class="cart-container">
       <i class="fa-solid fa-cart-shopping"></i>
       <span class="cart-count">0</span>
@@ -62,64 +62,164 @@
     <div class="menu-container">
 
       <div class="card">
+        <i class="fa-solid fa-heart wishlist"></i>
         <img src="images/Burger.jpg" alt="">
+        <span class="badge">🔥 Popular</span>
         <h3>Burger</h3>
         <p>₹149</p>
+        <div class="rating">⭐⭐⭐⭐</div>
         <button>Add to Cart</button>
       </div>
 
       <div class="card">
+        <i class="fa-solid fa-heart wishlist"></i>
         <img src="images/Pizza.jpg" alt="">
+        <span class="badge">⭐ Best Seller</span>
         <h3>Pizza</h3>
         <p>₹299</p>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
         <button>Add to Cart</button>
       </div>
 
       <div class="card">
+        <i class="fa-solid fa-heart wishlist"></i>
         <img src="images/Biryani.jpg" alt="">
+        <span class="badge">🧑‍🍳 Chef Special</span>
         <h3>Biryani</h3>
         <p>₹249</p>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
         <button>Add to Cart</button>
       </div>
 
       <div class="card">
+        <i class="fa-solid fa-heart wishlist"></i>
         <img src="images/Pasta.jpg" alt="">
         <h3>Pasta</h3>
         <p>₹199</p>
+        <div class="rating">⭐⭐⭐</div>
         <button>Add to Cart</button>
       </div>
 
       <div class="card">
+        <i class="fa-solid fa-heart wishlist"></i>
         <img src="images/Sandwich.jpg" alt="">
         <h3>Sandwich</h3>
         <p>₹149</p>
+        <div class="rating">⭐⭐⭐⭐</div>
         <button>Add to Cart</button>
       </div>
 
       <div class="card">
+        <i class="fa-solid fa-heart wishlist"></i>
         <img src="images/Noodles.jpg" alt="">
         <h3>Noodles</h3>
         <p>₹179</p>
+        <div class="rating">⭐⭐</div>
         <button>Add to Cart</button>
       </div>
 
       <div class="card">
+        <i class="fa-solid fa-heart wishlist"></i>
         <img src="images/IceCream.jpg" alt="">
         <h3>Ice Cream</h3>
         <p>₹99</p>
+        <div class="rating">⭐⭐⭐⭐</div>
         <button>Add to Cart</button>
       </div>
 
       <div class="card">
+        <i class="fa-solid fa-heart wishlist"></i>
         <img src="images/Mocktail.jpg" alt="">
         <h3>Mocktail</h3>
         <p>₹129</p>
+        <div class="rating">⭐</div>
         <button>Add to Cart</button>
       </div>
 
     </div>
   </section>
+<section class="special">
 
+<h2>🔥 Today's Specials</h2>
+<div class="countdown-box">
+
+<h3>⏳ Offer Ends In</h3>
+
+<div id="countdown">
+02:00:00
+</div>
+
+</div>
+
+<div class="special-container">
+
+<div class="special-card">
+<img src="images/Pizza.jpg" alt="">
+
+<h3>Pizza Special</h3>
+
+<p class="old-price">₹299</p>
+
+<p class="new-price">₹239</p>
+
+<p>20% OFF Today</p>
+
+</div>
+
+<div class="special-card">
+<img src="images/Burger.jpg" alt="">
+
+<h3>Burger Combo</h3>
+
+<p class="old-price">2 Burgers ₹298</p>
+
+<p class="new-price">₹149</p>
+
+<p>Buy 1 Get 1 Free</p>
+
+</div>
+
+<div class="special-card">
+<img src="images/Mocktail.jpg" alt="">
+
+<h3>Mocktail Upgrade</h3>
+
+<p class="old-price">Regular Size</p>
+
+<p class="new-price">Large Size</p>
+
+<p>Same Price ₹129</p>
+
+</div>
+</div>
+</section>
+<section class="top-selling">
+
+<h2>🏆 Top Selling Foods</h2>
+
+<div class="top-container">
+
+<div class="top-card">
+🥇
+<h3>Chicken Biryani</h3>
+<p>Most Ordered Item</p>
+</div>
+
+<div class="top-card">
+🥈
+<h3>Pizza</h3>
+<p>Customer Favorite</p>
+</div>
+
+<div class="top-card">
+🥉
+<h3>Burger</h3>
+<p>Trending Now</p>
+</div>
+
+</div>
+
+</section>
   <!-- Why Choose Us -->
   <section class="about">
   <h2>Why Choose Us</h2>
@@ -176,7 +276,33 @@
       <h4 id="reviewName">- Rahul</h4>
     </div>
   </section>
+<section class="reservation">
 
+<h2>Reserve Your Table 🍽️</h2>
+
+<form id="reservationForm">
+
+<input type="text"
+placeholder="Your Name"
+required>
+
+<input type="date"
+required>
+
+<input type="time"
+required>
+
+<input type="number"
+placeholder="Number of Guests"
+required>
+
+<button type="submit">
+Book Table
+</button>
+
+</form>
+
+</section>
   <!-- Contact -->
   <section class="contact" id="contact">
     <h2>Contact Us</h2>
@@ -209,13 +335,32 @@
   <div id="cartItems">
     <p id="emptyCart">Your Cart is Empty 🛒</p>
   </div>
+   <p class="coupon-text">
+   Use Coupon: SAVE20 🎉
+  </p>
+  <input type="text" id="couponInput" placeholder="Enter Coupon Code">
+
+  <button id="applyCoupon">
+  Apply Coupon
+  </button>
 
   <h3>Total: ₹<span id="totalPrice">0</span></h3>
 
   <button id="closeCart">Close</button>
   <button id="checkoutBtn">Checkout</button>
 </div>
+<div class="wishlist-sidebar" id="wishlistSidebar">
 
+<h2>❤️ My Wishlist</h2>
+
+<div id="wishlistItems">
+<p id="emptyWishlist">No Wishlist Items</p>
+</div>
+
+<button id="closeWishlist">Close</button>
+
+</div>
   <script src="script.js"></script>
+  <div id="toast"></div>
 </body>
 </html>

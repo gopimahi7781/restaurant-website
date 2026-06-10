@@ -482,3 +482,246 @@ footer p{
    width:auto !important;
    height:auto !important;
 }
+#toast{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#28a745;
+  color:white;
+  padding:15px 25px;
+  border-radius:10px;
+  font-weight:bold;
+  display:none;
+  z-index:9999;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+.wishlist{
+  position:absolute;
+  top:15px;
+  right:15px;
+  color:#ccc;
+  font-size:24px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.wishlist.active{
+  color:red;
+  transform:scale(1.2);
+}
+
+.card{
+  position:relative;
+}
+.rating{
+  margin:10px 0;
+  font-size:18px;
+  color:gold;
+}
+.badge{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:#ff5722;
+  color:white;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+  z-index:2;
+}
+#emptyCart{
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  color:#888;
+  margin-top:30px;
+  animation:floatCart 2s infinite ease-in-out;
+}
+
+@keyframes floatCart{
+  0%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-8px);
+  }
+  100%{
+    transform:translateY(0);
+  }
+}
+#couponInput{
+  width:100%;
+  padding:10px;
+  margin-top:15px;
+  border:2px solid #ff5722;
+  border-radius:8px;
+}
+
+#applyCoupon{
+  width:100%;
+  margin-top:10px;
+  background:#2196f3;
+}
+.coupon-text{
+  color:green;
+  font-weight:bold;
+  margin-top:10px;
+  text-align:center;
+}
+.plus-btn,
+.minus-btn{
+
+  background:#ff5722;
+  color:white;
+  border:none;
+  padding:4px 8px;
+  margin:0 5px;
+  border-radius:5px;
+  cursor:pointer;
+
+}
+
+.qty{
+
+  font-weight:bold;
+  margin:0 5px;
+
+}
+.reservation{
+  padding:80px 10%;
+  text-align:center;
+}
+
+.reservation h2{
+  margin-bottom:20px;
+  font-size:40px;
+}
+
+.reservation form{
+  max-width:500px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.reservation input{
+  padding:15px;
+  border:1px solid #ccc;
+  border-radius:8px;
+}
+.special{
+  padding:80px 10%;
+  text-align:center;
+}
+
+.special h2{
+  font-size:40px;
+  margin-bottom:30px;
+}
+
+.special-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.special-card{
+  background:#f5f5f5;
+  padding:20px;
+  border-radius:12px;
+  transition:0.3s;
+}
+
+body.dark .special-card{
+  background:#222;
+}
+
+.special-card:hover{
+  transform:translateY(-8px);
+}
+
+.special-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.special-card h3{
+  margin:15px 0 10px;
+}
+
+.special-card p{
+  color:#ff5722;
+  font-weight:bold;
+}
+.old-price{
+  text-decoration:line-through;
+  color:gray;
+  margin-top:10px;
+}
+
+.new-price{
+  color:green;
+  font-size:24px;
+  font-weight:bold;
+  margin:10px 0;
+}
+.countdown-box{
+  margin-bottom:30px;
+}
+
+#countdown{
+  font-size:32px;
+  font-weight:bold;
+  color:#ff5722;
+  margin-top:10px;
+}
+.top-selling{
+  padding:80px 10%;
+  text-align:center;
+}
+
+.top-selling h2{
+  margin-bottom:30px;
+  font-size:40px;
+}
+
+.top-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.top-card{
+  background:#f5f5f5;
+  padding:25px;
+  border-radius:12px;
+  transition:0.3s;
+  font-size:22px;
+}
+
+body.dark .top-card{
+  background:#222;
+}
+
+.top-card:hover{
+  transform:translateY(-8px);
+}
+.wishlist-sidebar{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:350px;
+  height:100%;
+  background:white;
+  transition:0.4s;
+  z-index:9999;
+  padding:20px;
+}
+
+.wishlist-sidebar.active{
+  right:0;
+}

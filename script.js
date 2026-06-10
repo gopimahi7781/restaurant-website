@@ -2,17 +2,18 @@
 
 // Dark Mode
 
-const themeBtn = document.getElementById("themeBtn");
+function showToast(message){
 
-themeBtn.onclick = () => {
-  document.body.classList.toggle("dark");
+  const toast = document.getElementById("toast");
 
-  if(document.body.classList.contains("dark")){
-    themeBtn.classList.replace("fa-moon","fa-sun");
-  }else{
-    themeBtn.classList.replace("fa-sun","fa-moon");
-  }
-};
+  toast.innerText = message;
+  toast.style.display = "block";
+
+  setTimeout(() => {
+    toast.style.display = "none";
+  },2000);
+
+}
 
 
 // Mobile Menu
@@ -68,7 +69,7 @@ const buttons = document.querySelectorAll(".card button");
 buttons.forEach(button => {
 
   button.addEventListener("click", () => {
-    alert("Item Added To Cart ✅");
+    showToast("Item Added To Cart ✅");
   });
 
 });
@@ -130,8 +131,15 @@ document.querySelectorAll(".card button").forEach(button => {
         );
 
         const item = document.createElement("div");
-        item.innerHTML = `
-${itemName} - ₹${itemPrice}
+    item.innerHTML = `
+${itemName} - ₹<span class="item-price">${itemPrice}</span>
+
+<button class="minus-btn">➖</button>
+
+<span class="qty">1</span>
+
+<button class="plus-btn">➕</button>
+
 <button class="remove-btn">❌</button>
 `;
 
@@ -140,6 +148,39 @@ emptyCart.style.display = "none";
 
 total += itemPrice;
 totalPrice.textContent = total;
+let qty = 1;
+
+const qtySpan = item.querySelector(".qty");
+
+item.querySelector(".plus-btn")
+.addEventListener("click", () => {
+
+  qty++;
+
+  qtySpan.textContent = qty;
+
+  total += itemPrice;
+
+  totalPrice.textContent = total;
+
+});
+
+item.querySelector(".minus-btn")
+.addEventListener("click", () => {
+
+  if(qty > 1){
+
+    qty--;
+
+    qtySpan.textContent = qty;
+
+    total -= itemPrice;
+
+    totalPrice.textContent = total;
+
+  }
+
+});
 
 item.querySelector(".remove-btn").addEventListener("click", () => {
 
@@ -152,10 +193,17 @@ item.querySelector(".remove-btn").addEventListener("click", () => {
     count--;
 
     document.querySelector(".cart-count").textContent = count;
-    if(cartItems.children.length === 1){
-      emptyCart.style.display = "block";
-    }
+    if(count <= 0){
 
+   total = 0;
+   totalPrice.textContent = 0;
+
+   couponApplied = false;
+
+   document.getElementById("couponInput").value = "";
+
+   emptyCart.style.display = "block";
+}
 });
     });
 });
@@ -176,4 +224,149 @@ summary += "\n\nOrder Placed Successfully ✅";
 alert(summary);
     }
 
+});
+const wishlistItems =
+document.getElementById("wishlistItems");
+const emptyWishlist =
+document.getElementById("emptyWishlist");
+
+document.querySelectorAll(".wishlist").forEach(icon => {
+
+  icon.addEventListener("click", () => {
+
+    const card = icon.parentElement;
+
+    const itemName =
+    card.querySelector("h3").innerText;
+
+    icon.classList.toggle("active");
+
+    if(icon.classList.contains("active")){
+      emptyWishlist.style.display = "none";
+
+      const item =
+      document.createElement("p");
+
+      item.id = itemName;
+
+      item.innerText = "❤️ " + itemName;
+
+      wishlistItems.appendChild(item);
+
+      showToast("Added To Wishlist ❤️");
+
+    }else{
+
+      const item =
+      document.getElementById(itemName);
+
+      if(item){
+        item.remove();
+      }
+      if(wishlistItems.children.length === 1){
+   emptyWishlist.style.display = "block";
+}
+
+      showToast("Removed From Wishlist 💔");
+    }
+
+  });
+
+});
+let couponApplied = false;
+
+document.getElementById("applyCoupon")
+.addEventListener("click", () => {
+
+  const coupon =
+  document.getElementById("couponInput")
+  .value.trim();
+
+  if(couponApplied){
+    showToast("Coupon Already Applied ❌");
+    return;
+  }
+
+  if(coupon === "SAVE20"){
+
+    const discount =
+    Math.floor(total * 0.20);
+
+    total -= discount;
+
+    totalPrice.textContent = total;
+
+    couponApplied = true;
+
+    showToast("20% Discount Applied 🎉");
+
+  }else{
+
+    showToast("Invalid Coupon ❌");
+
+  }
+
+});
+const reservationForm =
+document.getElementById("reservationForm");
+
+reservationForm.addEventListener("submit",(e)=>{
+
+  e.preventDefault();
+
+  showToast(
+    "Table Reserved Successfully 🍽️"
+  );
+
+  reservationForm.reset();
+
+});
+let time = 7200; // 2 Hours
+
+const countdown =
+document.getElementById("countdown");
+
+const timer = setInterval(() => {
+
+  let hours =
+  Math.floor(time / 3600);
+
+  let minutes =
+  Math.floor((time % 3600) / 60);
+
+  let seconds =
+  time % 60;
+
+  countdown.innerText =
+  `${String(hours).padStart(2,"0")}:` +
+  `${String(minutes).padStart(2,"0")}:` +
+  `${String(seconds).padStart(2,"0")}`;
+
+  time--;
+
+  if(time < 0){
+
+    clearInterval(timer);
+
+    countdown.innerText =
+    "Offer Expired ❌";
+
+  }
+
+},1000);
+const wishlistBtn =
+document.getElementById("wishlistBtn");
+
+const wishlistSidebar =
+document.getElementById("wishlistSidebar");
+
+const closeWishlist =
+document.getElementById("closeWishlist");
+
+wishlistBtn.addEventListener("click", () => {
+  wishlistSidebar.classList.add("active");
+});
+
+closeWishlist.addEventListener("click", () => {
+  wishlistSidebar.classList.remove("active");
 });
