@@ -725,3 +725,8 @@ body.dark .top-card{
 .wishlist-sidebar.active{
   right:0;
 }
+#reservationForm label{
+  display:block;
+  margin:10px 0 5px;
+  font-weight:600;
+}
